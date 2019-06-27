@@ -10,6 +10,17 @@
             top:0;
             left: 0;
         }
+
+        @keyframes load{
+            from{
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+            to{
+                transform: translateX(0px);
+                opacity: 100%;
+            }
+        }
         
         .btnBox {
             width: 100%;
@@ -32,6 +43,7 @@
             top: 0;
             display: flex;
             align-items: center;
+            animation: load 0.5s ease-in-out;
         }
         
         .toolBar {
