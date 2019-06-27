@@ -6,6 +6,9 @@
         
         canvas {
             background: #FAFAFA;
+            position: fixed;
+            top:0;
+            left: 0;
         }
         
         .btnBox {
@@ -20,11 +23,7 @@
         .btnBox button {
             width: 100px;
         }
-        
-        body {
-            overflow: hidden;
-        }
-        
+         
         .toolBox {
             width: 120px;
             height: 100%;
