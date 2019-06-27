@@ -1,19 +1,274 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-canvas {}
-
-.btnBox {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.btnBox button {
-    width: 100px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        canvas {
+            background: #FAFAFA;
+        }
+        
+        .btnBox {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .btnBox button {
+            width: 100px;
+        }
+        
+        body {
+            overflow: hidden;
+        }
+        
+        .toolBox {
+            width: 120px;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toolBar {
+            width: 120px;
+            height: 812px;
+            background: #fff;
+            border-radius: 0 60px 60px 0;
+            position: relative;
+            box-shadow: 4px 0 20px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .toolBar>.tool1 {
+            margin-top: 60px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toolBar>.tool1 [class] {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ddd;
+            background: #FAFAFA;
+            border-radius: 50%;
+            text-align: center;
+            padding-top: 6px;
+        }
+        
+        .toolBar>.tool2 {
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toolBar>.tool2 .rubberPack {
+            width: 50px;
+            height: 72px;
+            background-color: #626262;
+            background-image: linear-gradient(180deg, #626262 0%, #343434 9%, #343434 91%, #626262 100%);
+            border-radius: 0 6px 6px 0;
+            z-index: 1;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+            transition: width 0.4s;
+        }
+        
+        .toolBar>.tool2:hover .rubberPack {
+            width: 70px;
+        }
+        
+        .toolBar>.tool2 .rubberBody {
+            width: 36px;
+            height: 68px;
+            background-color: #999;
+            margin-left: -6px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), inset -2px 2px 2px 0px rgba(255, 255, 255, .5);
+        }
+        
+        .tool3 {
+            margin-top: 60px;
+            position: absolute;
+        }
+        
+        .tool3 li {
+            list-style: none;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool3 li .penBody {
+            height: 50px;
+            width: 143px;
+            background-color: #eeeeee;
+            background-image: linear-gradient(180deg, #eeeeee 0%, #ffffff 50%, #dddddd 100%);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+            position: relative;
+            transition: width 0.4s;
+        }
+        
+        .tool3 li:nth-child(1) span {
+            display: inline-block;
+            width: 4px;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            right: 30px;
+        }
+        
+        .tool3 .penHead {
+            width: 30px;
+            height: 50px;
+            background-image: linear-gradient(to bottom, #eeeeee 0%, #8d8d8d 100%);
+        }
+        
+        .tool3 .penHead::after {
+            content: "";
+            display: block;
+            height: 6px;
+            border-left: 30px solid transparent;
+            border-top: 22px solid #fafafa;
+            border-bottom: 22px solid #fafafa;
+        }
+        
+        .tool3 .nib {
+            width: 7px;
+            height: 4px;
+            background: #000
+        }
+        
+        .tool3 li:nth-child(2) span {
+            display: inline-block;
+            width: 8px;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            right: 30px;
+        }
+        
+        .tool3 li:nth-child(2) .penHead::after {
+            content: "";
+            display: block;
+            height: 8px;
+            border-left: 30px solid transparent;
+            border-top: 21px solid #fafafa;
+            border-bottom: 21px solid #fafafa;
+        }
+        
+        .tool3 li:nth-child(2) .nib {
+            height: 6px;
+        }
+        
+        .tool3 li:nth-child(3) span {
+            display: inline-block;
+            width: 12px;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            right: 30px;
+        }
+        
+        .tool3 li:nth-child(3) .penHead::after {
+            content: "";
+            display: block;
+            height: 10px;
+            border-left: 30px solid transparent;
+            border-top: 20px solid #fafafa;
+            border-bottom: 20px solid #fafafa;
+        }
+        
+        .tool3 li:nth-child(3) .nib {
+            height: 8px;
+        }
+        
+        .tool3 li:nth-child(4) span {
+            display: inline-block;
+            width: 16px;
+            height: 50px;
+            background: #000;
+            position: absolute;
+            right: 30px;
+        }
+        
+        .tool3 li:nth-child(4) .penHead::after {
+            content: "";
+            display: block;
+            height: 12px;
+            border-left: 30px solid transparent;
+            border-top: 19px solid #fafafa;
+            border-bottom: 19px solid #fafafa;
+        }
+        
+        .tool3 li:nth-child(4) .nib {
+            height: 10px;
+        }
+        
+        .tool3 li:hover .penBody {
+            width: 163px;
+        }
+        
+        .tool4 ul {
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .tool4 li {
+            list-style: none;
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tool4 {
+            position: absolute;
+            bottom: 60px;
+        }
+        
+        .tool4 li:nth-child(5),
+        .tool4 li:nth-child(6) {
+            margin-bottom: 0;
+        }
+        
+        .tool4 li:nth-child(1) {
+            background-color: #FFC253;
+        }
+        
+        .tool4 li:nth-child(2) {
+            background-color: #000000;
+        }
+        
+        .tool4 li:nth-child(3) {
+            background-color: #EB3412;
+        }
+        
+        .tool4 li:nth-child(4) {
+            background-color: #2B81FB;
+        }
+        
+        .tool4 li:nth-child(5) {
+            background-color: #6EDB6C;
+        }
+        
+        .tool4 li:nth-child(6) {
+            background-color: #AA2BFB;
+        }
+        
+        #colorSelect {
+            width: 29px;
+            height: 29px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }

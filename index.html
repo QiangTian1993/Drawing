@@ -11,10 +11,66 @@
 
 <body>
     <canvas id="canvas"> </canvas>
-    <div class="btnBox">
-        <button id="eraser">橡皮擦</button>
+    <div class="toolBox">
+        <div class="toolBar">
+            <div class="tool1">
+                <div class="delete" id="delete">
+                    <img src="./images/delete.png" alt="">
+                </div>
+                <div class="download" id="download">
+                    <img src="./images/download.png" alt="">
+                </div>
+            </div>
+            <div class="tool2" id="eraser">
+                <div class="rubberPack" id="rubberPack"></div>
+                <div class="rubberBody"></div>
+            </div>
+            <div class="tool3">
+                <ul>
+                    <li id="thickness1">
+                        <div class="penBody" id="penBody1">
+                            <span></span>
+                        </div>
+                        <div class="penHead"></div>
+                        <div class="nib"></div>
+                    </li>
+                    <li id="thickness2">
+                        <div class="penBody" id="penBody2">
+                            <span></span>
+                        </div>
+                        <div class="penHead"></div>
+                        <div class="nib"></div>
+                    </li>
+                    <li id="thickness3">
+                        <div class="penBody" id="penBody3">
+                            <span></span>
+                        </div>
+                        <div class="penHead"></div>
+                        <div class="nib"></div>
+                    </li>
+                    <li id="thickness4">
+                        <div class="penBody" id="penBody4">
+                            <span></span>
+                        </div>
+                        <div class="penHead"></div>
+                        <div class="nib"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tool4">
+                <ul id="colors">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="main.js">
+</script>
 
 </html>
